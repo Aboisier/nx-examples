@@ -1,5 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
@@ -18,10 +18,10 @@ describe('AppComponent', () => {
     fixture.detectChanges();
   }));
 
-  it('should create the app', () => {
+  it('should create the app', fakeAsync(() => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  });
+  }));
 
   it(`should render the header`, () => {
     expect(
